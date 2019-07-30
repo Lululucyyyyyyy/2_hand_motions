@@ -14,7 +14,7 @@ output_details = interpreter.get_output_details()
 input_shape = input_details[0]['shape']
 
 while True:
-	subprocess.call("ifswebcam -D 0.01 --no-banner --quiet img.jpeg", shell=True)
+	subprocess.call("fswebcam -D 0.01 --no-banner --quiet img.jpeg", shell=True)
 	img = Image.open("img.jpeg")
 	input_data = np.expand_dims(np.array(img.resize((224, 224)), dtype=np.float32), 0)
 

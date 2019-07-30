@@ -39,10 +39,10 @@ while True:
 	output_data = interpreter.get_tensor(output_details[0]['index'])
 	output = np.argmax(output_data)
 	if output == 1:
-		print('one', the_time)
+		print('one')
 		word = 'one'
 	else:
-		print('five', the_time)
+		print('five')
 		word = 'five'
 
 	#show camera input

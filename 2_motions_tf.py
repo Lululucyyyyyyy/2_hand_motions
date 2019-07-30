@@ -11,7 +11,6 @@ from pylab import imshow
 import scipy
 from PIL import Image
 import tensorflow as tf
-from cnn_utils import *
 import random
 from tensorflow.keras import layers
 import time
@@ -84,6 +83,11 @@ Y_train_orig = Y_orig[102:len(labels_)]
 X_train = X_train_orig/255
 X_dev = X_dev_orig/255
 X_test = X_test_orig/255
+
+def convert_to_one_hot(Y, C):
+    Y = np.eye(C)[Y.reshape(-1)].T
+    return Y
+
 Y_train = convert_to_one_hot(Y_train_orig, 2).T
 Y_test = convert_to_one_hot(Y_test_orig, 2).T
 Y_dev = convert_to_one_hot(Y_dev_orig, 2).T
